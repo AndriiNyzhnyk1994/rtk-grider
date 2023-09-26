@@ -6,7 +6,7 @@ export default function App() {
   const handleResetClick = () => {
     //
   };
-
+ 
   return (
     <div className="container is-fluid">
       <button onClick={() => handleResetClick()} className="button is-danger">
