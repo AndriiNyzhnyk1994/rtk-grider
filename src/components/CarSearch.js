@@ -1,6 +1,6 @@
 
 function CarSearch() {
-    return <div>CarForm</div>
+    return <div>CarSearch</div>
 }
 
 export default CarSearch

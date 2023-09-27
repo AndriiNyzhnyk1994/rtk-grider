@@ -1,6 +1,6 @@
 
 function CarValue() {
-    return <div>CarForm</div>
+    return <div>CarValue</div>
 }
 
 export default CarValue
