@@ -1,4 +1,4 @@
-import {configureStore, createSlice} from '@reduxjs/toolkit'
+import { configureStore, createSlice } from '@reduxjs/toolkit'
 
 const songsSlice = createSlice({
     // slice:
@@ -19,11 +19,26 @@ const songsSlice = createSlice({
         },
     }
 })
+const moviesSlice = createSlice({
+    name: 'movie',
+    initialState: [],
+    reducers: {
+        addMovie(state, action) {
+            state.push(action.payload)
+        },
+        removeMovie(state, action) {
+            //action.payload === string, the movie we want to remove
+            const index = state.indexOf(action.payload)
+            state.splice(index, 1)
+        },
+    }
+})
 
 
 const store = configureStore({
     reducer: {
-        songs: songsSlice.reducer
+        songs: songsSlice.reducer,
+        movies: moviesSlice.reducer,
     }
 })
 
@@ -36,5 +51,8 @@ store.dispatch(songsSlice.actions.addSong('NEW SONG'))
 const finalState = store.getState()
 console.log(JSON.stringify(finalState));
 
-export {store}
-export const {addSong, removeSong} = songsSlice.actions
+
+
+export { store }
+export const { addSong, removeSong } = songsSlice.actions
+export const { addMovie, removeMovie } = moviesSlice.actions
