@@ -4,7 +4,7 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const carsSlice = createSlice({
     name: 'cars',
-    imitialState: {
+    initialState: {
         searchTerm: '',
         cars: []
     },
@@ -28,5 +28,6 @@ const carsSlice = createSlice({
     }
 })
 
-export const {changeSearchTerm, addCar, removeCar} = formSlice.actions
-export const carsReducer = formSlice.reducer
+export const {changeSearchTerm, addCar, removeCar} = carsSlice.actions
+export const carsReducer = carsSlice.reducer
+
